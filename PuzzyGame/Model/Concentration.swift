@@ -23,7 +23,7 @@ class Concentration {
             }
         }
     }
-    var score = 0
+    var score = 10
     var flips = 0
     init(numberOfPairsOfCards: Int) {
         assert(numberOfPairsOfCards > 0, "Concentraiton.init(\(numberOfPairsOfCards)) you must have at least one pair of cards")
@@ -57,7 +57,7 @@ class Concentration {
     
     func chooseCard(at index: Int) {
         assert(cards.indices.contains(index), "Concentration.chooseCard(at: \(index)) chosen index not in the card")
-        self.flips += 1
+        
         if !cards[index].isMatched {
             if let matchIndex = self.indexOfTheOneAndOnlyFaceUpCard {
                 if matchIndex != index {
@@ -73,7 +73,8 @@ class Concentration {
                         cards[index].isFaceUp = true
                         cards[matchIndex].isFaceUp = false
                         self.score -= 1
-                    }                    
+                    }
+                    self.flips += 1
                 }
             } else {
                 indexOfTheOneAndOnlyFaceUpCard = index

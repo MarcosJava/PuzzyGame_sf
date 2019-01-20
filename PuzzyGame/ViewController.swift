@@ -21,7 +21,6 @@ class ViewController: UIViewController {
         didSet {
             guard let theme = themeChoice else { return }
             self.emojiChoices = theme.getCardsByThemes()
-            self.themeLabel.text = "\(theme)"
         }
     }
     var score = 0 {
@@ -56,8 +55,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.newGameButton.layer.cornerRadius = self.newGameButton.bounds.width / 12
         self.newGameButton.layer.masksToBounds = true
-        self.themeChoice = ThemeEnum.getRandomTheme()
         self.flipCount = 0
+        if let theme = themeChoice {
+            self.themeLabel.text = "\(theme)"
+            
+        }
     }
     
     @IBAction func touchCard(_ sender: UIButton) {
@@ -73,7 +75,7 @@ class ViewController: UIViewController {
         updateViewFromModel()
     }
     private func resetView() {        
-        self.themeChoice = ThemeEnum.getRandomTheme()
+        //self.themeChoice = ThemeEnum.getRandomTheme()
         self.emoji = [Card: String]()
     }
     

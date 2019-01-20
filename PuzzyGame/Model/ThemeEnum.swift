@@ -30,4 +30,20 @@ extension ThemeEnum {
             return ["⛹🏻‍♂️", "🚴🏻‍♂️", "🏌🏻‍♂️", "🏋🏻‍♂️", "🏄🏻‍♂️", "⛸", "🧘🏻‍♂️", "🏊🏻‍♂️", "🤺", "🏹", "⚽️", "🏈"]
         }
     }
+    
+    static func byName(_ name: String) -> ThemeEnum {
+        let choosed = name.lowercased()
+        switch choosed {
+        case "sport":
+            return .sport
+        case "music":
+            return .music
+        case "country":
+            return .country
+        case "halloween":
+            return .halloween
+        default:
+            return .country
+        }
+    }
 }
