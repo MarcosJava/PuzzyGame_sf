@@ -59,25 +59,23 @@ class Concentration {
         assert(cards.indices.contains(index), "Concentration.chooseCard(at: \(index)) chosen index not in the card")
         
         if !cards[index].isMatched {
-            if let matchIndex = self.indexOfTheOneAndOnlyFaceUpCard {
-                if matchIndex != index {
-                    if cards[matchIndex] == cards[index] {
-                        cards[matchIndex].isMatched = true
+            if let lastIndex = self.indexOfTheOneAndOnlyFaceUpCard {
+                if lastIndex != index { //choose a different card
+                    if cards[lastIndex] == cards[index] {
+                        cards[lastIndex].isMatched = true
                         cards[index].isMatched = true
-                        
-                        cards[matchIndex].isFaceUp = false
-                        cards[index].isFaceUp = false
+                        cards[index].isFaceUp = true
                         self.score += 2
-                    
                     } else {
                         cards[index].isFaceUp = true
-                        cards[matchIndex].isFaceUp = false
+                        cards[lastIndex].isFaceUp = false
                         self.score -= 1
                     }
                     self.flips += 1
                 }
-            } else {
+            } else { //set a new card
                 indexOfTheOneAndOnlyFaceUpCard = index
+                self.flips += 1
             }
         }
     }

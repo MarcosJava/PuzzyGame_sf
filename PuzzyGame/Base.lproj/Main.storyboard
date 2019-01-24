@@ -27,7 +27,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <state key="normal" title="Sport"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Choose Theme" id="2lV-Y0-dWc"/>
+                                            <action selector="changeTheme:" destination="5o1-hN-E5Z" eventType="touchUpInside" id="qLt-1X-Ex9"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOB-3D-dq4">
@@ -35,7 +35,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <state key="normal" title="Music"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Choose Theme" id="GFH-cf-8Gf"/>
+                                            <action selector="changeTheme:" destination="5o1-hN-E5Z" eventType="touchUpInside" id="FJP-MF-4Sh"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X95-l3-DXS">
@@ -43,7 +43,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <state key="normal" title="Country"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Choose Theme" id="1T3-rS-ZHd"/>
+                                            <action selector="changeTheme:" destination="5o1-hN-E5Z" eventType="touchUpInside" id="4lH-lP-cUW"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -57,15 +57,18 @@
                         <viewLayoutGuide key="safeArea" id="D8r-Sj-rox"/>
                     </view>
                     <navigationItem key="navigationItem" id="FTV-lv-sKQ"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Choose Theme" id="fgS-Gm-QS8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TdA-KN-7GT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1124" y="-676"/>
+            <point key="canvasLocation" x="-1350" y="-676"/>
         </scene>
-        <!--View Controller-->
+        <!--Concentration View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PuzzyGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ConcentrationViewController" customModule="PuzzyGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -422,7 +425,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lLU-A8-u5K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4421" y="422"/>
+            <point key="canvasLocation" x="-4153" y="-207"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="12w-ka-2BK">
@@ -438,7 +441,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1dL-jK-Kux" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4421" y="-230"/>
+            <point key="canvasLocation" x="-5014" y="-318"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="IaN-Bg-aVf">
@@ -457,7 +460,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SXQ-zS-Dsc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5368" y="98"/>
+            <point key="canvasLocation" x="-3916" y="-986"/>
         </scene>
         <!--Concentration-->
         <scene sceneID="aCL-2f-CqQ">
@@ -465,8 +468,8 @@
                 <splitViewController id="qyW-Ws-aky" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Concentration" id="u3i-yC-PzR"/>
                     <connections>
-                        <segue destination="8v6-Qq-SaU" kind="relationship" relationship="masterViewController" id="NhQ-Ao-h2t"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="detailViewController" id="ppS-Zj-amD"/>
+                        <segue destination="8v6-Qq-SaU" kind="relationship" relationship="masterViewController" id="K4U-tm-H5l"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oxT-g5-JPq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -475,6 +478,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ppS-Zj-amD"/>
+        <segue reference="fgS-Gm-QS8"/>
     </inferredMetricsTieBreakers>
 </document>

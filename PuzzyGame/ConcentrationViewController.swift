@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ConcentrationViewController: UIViewController {
 
     @IBOutlet weak var newGameButton: UIButton!
     @IBOutlet weak var flipCountLabel: UILabel!
@@ -16,20 +16,30 @@ class ViewController: UIViewController {
     @IBOutlet weak var pointLabel: UILabel!
     @IBOutlet weak var themeLabel: UILabel!
     
+    private var titleTheme: String? {
+        didSet {
+            guard let theme = self.themeLabel,
+                let themeName = titleTheme else { return }
+            theme.text = "\(themeName)"
+            self.updateViewFromModel()
+        }
+    }
     
     var themeChoice: ThemeEnum? {
         didSet {
             guard let theme = themeChoice else { return }
             self.emojiChoices = theme.getCardsByThemes()
+            self.titleTheme = "\(theme)"
+            self.resetView()
         }
     }
-    var score = 0 {
+    private var score = 0 {
         didSet {
             self.pointLabel.text = "Score: \(score)"
         }
     }
     
-    var flipCount: Int! {
+    private var flipCount: Int! {
         didSet {
             updateFlipCountLabel()
         }
@@ -56,9 +66,8 @@ class ViewController: UIViewController {
         self.newGameButton.layer.cornerRadius = self.newGameButton.bounds.width / 12
         self.newGameButton.layer.masksToBounds = true
         self.flipCount = 0
-        if let theme = themeChoice {
-            self.themeLabel.text = "\(theme)"
-            
+        if (titleTheme != nil) {
+            self.themeLabel.text = "\(titleTheme!)"
         }
     }
     
@@ -74,8 +83,7 @@ class ViewController: UIViewController {
         game.resetGame()
         updateViewFromModel()
     }
-    private func resetView() {        
-        //self.themeChoice = ThemeEnum.getRandomTheme()
+    private func resetView() {
         self.emoji = [Card: String]()
     }
     
