@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1805033321D7CB76004B9854 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805033221D7CB76004B9854 /* Extensions.swift */; };
+		1838547421FCE3D600275236 /* CArdBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838547321FCE3D600275236 /* CArdBehavior.swift */; };
 		18C149AA21F388950069DFB2 /* ConcentrationThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C149A921F388950069DFB2 /* ConcentrationThemeViewController.swift */; };
 		18C9E05D21D9801C00467F9B /* ThemeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C9E05C21D9801C00467F9B /* ThemeEnum.swift */; };
 		D073BD4D21D4FECD0012096B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D073BD4C21D4FECD0012096B /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		1805033221D7CB76004B9854 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		1838547321FCE3D600275236 /* CArdBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CArdBehavior.swift; sourceTree = "<group>"; };
 		18C149A921F388950069DFB2 /* ConcentrationThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationThemeViewController.swift; sourceTree = "<group>"; };
 		18C9E05C21D9801C00467F9B /* ThemeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeEnum.swift; sourceTree = "<group>"; };
 		D073BD4921D4FECD0012096B /* PuzzyGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PuzzyGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +78,7 @@
 				D073BD5521D4FECF0012096B /* LaunchScreen.storyboard */,
 				D073BD5821D4FECF0012096B /* Info.plist */,
 				1805033221D7CB76004B9854 /* Extensions.swift */,
+				1838547321FCE3D600275236 /* CArdBehavior.swift */,
 			);
 			path = PuzzyGame;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				D073BD4D21D4FECD0012096B /* AppDelegate.swift in Sources */,
 				D073BD6021D502AB0012096B /* Concentration.swift in Sources */,
 				D073BD6221D5038E0012096B /* Card.swift in Sources */,
+				1838547421FCE3D600275236 /* CArdBehavior.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

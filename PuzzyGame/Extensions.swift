@@ -6,7 +6,19 @@
 //  Copyright © 2018 Marcos Felipe Souza. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+extension CGFloat {
+    var arc4random : CGFloat {
+        if self > 0 {
+            return CGFloat(arc4random_uniform(UInt32(self)))
+        } else if self < 0 {
+            return -CGFloat(arc4random_uniform(UInt32(abs(self))))
+        } else {
+            return CGFloat(0)
+        }
+    }
+}
 
 extension Int {
     var arc4random : Int {
